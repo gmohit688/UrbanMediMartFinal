@@ -23,8 +23,8 @@ namespace UrbanMediMarts.Controllers
         }
         public ActionResult Login()
         {
-
-            return View();
+            Customer obj = new Customer();
+            return View(obj);
         }
         [HttpPost]
         public ActionResult Login(Customer cs)
