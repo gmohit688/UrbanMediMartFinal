@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/urbanmedimarts/databases/UrbanMediMart",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:\"UrbanMediMartEntities\"",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
