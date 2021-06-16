@@ -208,6 +208,8 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\UMMFinal - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\UMMFinal - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\urbanMediMarts - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\urbanMediMarts - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\urbanMediMarts - Web Deploy.pubxml" />

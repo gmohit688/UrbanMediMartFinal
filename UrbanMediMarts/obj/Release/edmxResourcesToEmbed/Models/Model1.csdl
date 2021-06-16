@@ -166,5 +166,33 @@
       <End Role="Product" EntitySet="Products" />
       <End Role="Order_detail" EntitySet="Order_detail" />
     </AssociationSet>
+    <FunctionImport Name="spallproduct" ReturnType="Collection(UrbanMediMartModel.spallproduct_Result)" />
+    <FunctionImport Name="spgetcategory" ReturnType="Collection(UrbanMediMartModel.spgetcategory_Result)">
+      <Parameter Name="CategoryId" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="spallproduct_Result">
+    <Property Type="Int32" Name="MedicineID" Nullable="false" />
+    <Property Type="String" Name="MedicineName" Nullable="false" MaxLength="80" />
+    <Property Type="String" Name="Company" Nullable="false" MaxLength="80" />
+    <Property Type="Double" Name="Price" Nullable="false" />
+    <Property Type="Double" Name="Discount" Nullable="true" />
+    <Property Type="DateTime" Name="MfgDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="ExpDate" Nullable="false" Precision="23" />
+    <Property Type="Double" Name="Units" Nullable="false" />
+    <Property Type="Binary" Name="PImage" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spgetcategory_Result">
+    <Property Type="Int32" Name="MedicineID" Nullable="false" />
+    <Property Type="String" Name="MedicineName" Nullable="false" MaxLength="80" />
+    <Property Type="String" Name="Company" Nullable="false" MaxLength="80" />
+    <Property Type="Double" Name="Price" Nullable="false" />
+    <Property Type="Double" Name="Discount" Nullable="true" />
+    <Property Type="DateTime" Name="MfgDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="ExpDate" Nullable="false" Precision="23" />
+    <Property Type="Double" Name="Units" Nullable="false" />
+    <Property Type="Binary" Name="PImage" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+  </ComplexType>
 </Schema>
