@@ -13,7 +13,7 @@ namespace UrbanMediMarts.Controllers
 {[Authorize]
     public class AdminsController : Controller
     {
-        private UrbanMediMartEntities db = new UrbanMediMartEntities();
+        private UrbanMediMartEntities1 db = new UrbanMediMartEntities1();
 
         // GET: Admins
         public ActionResult Index()
@@ -28,7 +28,7 @@ namespace UrbanMediMarts.Controllers
         [HttpPost]
         public ActionResult Login(Admin ad)
         {
-            using (var Context = new UrbanMediMartEntities())
+            using (var Context = new UrbanMediMartEntities1())
             {
                 bool isValid = Context.Admins.Any(x => x.email == ad.email && x.Password == ad.Password);
                 if (isValid)

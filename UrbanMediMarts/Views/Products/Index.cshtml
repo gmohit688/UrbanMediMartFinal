@@ -1,151 +1,53 @@
 ﻿@model IEnumerable<UrbanMediMarts.Models.Product>
 
+
+
 @{
     ViewBag.Title = "Index";
 }
 
+
+
 <h2>Products</h2>
+
+
 
 
 <div class="container">
 
+
+
     @foreach (var item in Model)
     {
         <div class="flex-container" style="background-color:seashell;margin:40px; width: 25rem; float:left; height:33rem;border:1px solid #004d40">
-            
+
             <div class="card">
                 <img class="center-block" src="@Html.DisplayFor(modelItem => item.PImage)" height="200" width="200" ) />
+
+
 
                 <div class="card-body text-center">
                     @Html.DisplayFor(modelItem => item.MedicineName)<br />
 
+
+
                     Price: &#8377;@Html.DisplayFor(modelItem => item.Price)<br />
 
+
+
                     Category: @Html.DisplayFor(modelItem => item.Category.CategoryName)
+
+
 
 
                 </div>
                 <div class="card-footer text-center">
                     <a href="#" class="btn btn-primary">Add to Cart</a>
                 </div>
-            </div>       
+            </div>
         </div>
+
+
 
     }
 </div>
-
-
-@*<div class="row mt-4">
-        <div class="col-md-12">
-            <div class="card-columns" >
-                @foreach (var item in Model)
-                {
-                    <div class="card" style="width: 18rem;height:30rem;border:1px solid #004d40">
-
-
-                            @Html.DisplayNameFor(model => model.PImage)
-
-                            <div class="card-body">
-                                @Html.DisplayFor(modelItem => item.MedicineName)
-
-                                @Html.DisplayFor(modelItem => item.Price)
-
-                                @Html.DisplayFor(modelItem => item.Category.CategoryName)
-
-
-                            </div>
-                            <div class="card-footer text-center">
-                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                            </div>
-
-
-                    </div>
-                    <br />
-                }
-                </div>
-        </div>
-    </div>*@
-
-
-
-
-@*<div class="container">
-    @foreach (var item in Model)
-    {
-        <div class="card col-md-3">
-            <img class="center-block" src="@Html.DisplayFor(modelItem => item.Photo)" height="300" width="230" alt=@Html.DisplayFor(modelItem => item.Name) />
-            // other display tags
-        </div>
-    }*@
-
-
-@*<table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.MedicineName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Company)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Discount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MfgDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ExpDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Units)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category.CategoryName)
-            </th>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MedicineName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Company)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Discount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MfgDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExpDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Units)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.MedicineID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.MedicineID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.MedicineID })
-            </td>
-        </tr>
-    }
-
-    </table>*@

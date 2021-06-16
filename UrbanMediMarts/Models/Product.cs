@@ -28,7 +28,7 @@ namespace UrbanMediMarts.Models
         public System.DateTime MfgDate { get; set; }
         public System.DateTime ExpDate { get; set; }
         public double Units { get; set; }
-        public byte[] PImage { get; set; }
+        public string PImage { get; set; }
         public Nullable<int> CategoryID { get; set; }
     
         public virtual Category Category { get; set; }

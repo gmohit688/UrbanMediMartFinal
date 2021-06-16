@@ -73,7 +73,7 @@
     <Property Name="MfgDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ExpDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Units" Type="Double" Nullable="false" />
-    <Property Name="PImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="PImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="CategoryID" Type="Int32" />
     <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__09A971A2" FromRole="Product" ToRole="Category" />
     <NavigationProperty Name="Order_detail" Relationship="Self.FK__Order_det__Produ__114A936A" FromRole="Product" ToRole="Order_detail" />
@@ -142,7 +142,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="UrbanMediMartEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="UrbanMediMartEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Admins" EntityType="Self.Admin" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
@@ -180,7 +180,7 @@
     <Property Type="DateTime" Name="MfgDate" Nullable="false" Precision="23" />
     <Property Type="DateTime" Name="ExpDate" Nullable="false" Precision="23" />
     <Property Type="Double" Name="Units" Nullable="false" />
-    <Property Type="Binary" Name="PImage" Nullable="true" />
+    <Property Type="String" Name="PImage" Nullable="true" />
     <Property Type="Int32" Name="CategoryID" Nullable="true" />
   </ComplexType>
   <ComplexType Name="spgetcategory_Result">
@@ -192,7 +192,7 @@
     <Property Type="DateTime" Name="MfgDate" Nullable="false" Precision="23" />
     <Property Type="DateTime" Name="ExpDate" Nullable="false" Precision="23" />
     <Property Type="Double" Name="Units" Nullable="false" />
-    <Property Type="Binary" Name="PImage" Nullable="true" />
+    <Property Type="String" Name="PImage" Nullable="true" />
     <Property Type="Int32" Name="CategoryID" Nullable="true" />
   </ComplexType>
 </Schema>

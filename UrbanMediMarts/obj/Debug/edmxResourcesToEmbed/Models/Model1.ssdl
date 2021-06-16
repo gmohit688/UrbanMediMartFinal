@@ -67,7 +67,7 @@
     <Property Name="MfgDate" Type="datetime" Nullable="false" />
     <Property Name="ExpDate" Type="datetime" Nullable="false" />
     <Property Name="Units" Type="float" Nullable="false" />
-    <Property Name="PImage" Type="varbinary(max)" />
+    <Property Name="PImage" Type="nvarchar(max)" />
     <Property Name="CategoryID" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:

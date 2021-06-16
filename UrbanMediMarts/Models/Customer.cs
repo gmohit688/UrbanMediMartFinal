@@ -11,7 +11,8 @@ namespace UrbanMediMarts.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,6 +24,7 @@ namespace UrbanMediMarts.Models
         public int CustomerID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         public string Address { get; set; }
         public string City { get; set; }

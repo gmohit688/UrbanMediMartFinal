@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="UrbanMediMartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="UrbanMediMartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="Id" />
@@ -72,7 +72,7 @@
           <Property Name="MfgDate" Type="datetime" Nullable="false" />
           <Property Name="ExpDate" Type="datetime" Nullable="false" />
           <Property Name="Units" Type="float" Nullable="false" />
-          <Property Name="PImage" Type="varbinary(max)" />
+          <Property Name="PImage" Type="nvarchar(max)" />
           <Property Name="CategoryID" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -179,7 +179,8 @@ warning 6002: The table/view 'UrbanMediMart.sys.database_firewall_rules' does no
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="UrbanMediMartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -256,7 +257,7 @@ warning 6002: The table/view 'UrbanMediMart.sys.database_firewall_rules' does no
           <Property Name="MfgDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ExpDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Units" Type="Double" Nullable="false" />
-          <Property Name="PImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CategoryID" Type="Int32" />
           <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__09A971A2" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Order_detail" Relationship="Self.FK__Order_det__Produ__114A936A" FromRole="Product" ToRole="Order_detail" />
@@ -325,7 +326,7 @@ warning 6002: The table/view 'UrbanMediMart.sys.database_firewall_rules' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="UrbanMediMartEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="UrbanMediMartEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admin" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
@@ -363,7 +364,7 @@ warning 6002: The table/view 'UrbanMediMart.sys.database_firewall_rules' does no
           <Property Type="DateTime" Name="MfgDate" Nullable="false" Precision="23" />
           <Property Type="DateTime" Name="ExpDate" Nullable="false" Precision="23" />
           <Property Type="Double" Name="Units" Nullable="false" />
-          <Property Type="Binary" Name="PImage" Nullable="true" />
+          <Property Type="String" Name="PImage" Nullable="true" />
           <Property Type="Int32" Name="CategoryID" Nullable="true" />
         </ComplexType>
         <ComplexType Name="spgetcategory_Result">
@@ -375,7 +376,7 @@ warning 6002: The table/view 'UrbanMediMart.sys.database_firewall_rules' does no
           <Property Type="DateTime" Name="MfgDate" Nullable="false" Precision="23" />
           <Property Type="DateTime" Name="ExpDate" Nullable="false" Precision="23" />
           <Property Type="Double" Name="Units" Nullable="false" />
-          <Property Type="Binary" Name="PImage" Nullable="true" />
+          <Property Type="String" Name="PImage" Nullable="true" />
           <Property Type="Int32" Name="CategoryID" Nullable="true" />
         </ComplexType>
       </Schema>
@@ -383,7 +384,7 @@ warning 6002: The table/view 'UrbanMediMart.sys.database_firewall_rules' does no
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="UrbanMediMartModelStoreContainer" CdmEntityContainer="UrbanMediMartEntities">
+        <EntityContainerMapping StorageEntityContainer="UrbanMediMartModelStoreContainer" CdmEntityContainer="UrbanMediMartEntities1">
           <EntitySetMapping Name="Admins">
             <EntityTypeMapping TypeName="UrbanMediMartModel.Admin">
               <MappingFragment StoreEntitySet="Admin">

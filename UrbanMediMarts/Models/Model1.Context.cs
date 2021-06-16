@@ -15,10 +15,10 @@ namespace UrbanMediMarts.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class UrbanMediMartEntities : DbContext
+    public partial class UrbanMediMartEntities1 : DbContext
     {
-        public UrbanMediMartEntities()
-            : base("name=UrbanMediMartEntities")
+        public UrbanMediMartEntities1()
+            : base("name=UrbanMediMartEntities1")
         {
         }
     

@@ -13,7 +13,7 @@ namespace UrbanMediMarts.Controllers
 {
     public class CustomersController : Controller
     {
-        private UrbanMediMartEntities db = new UrbanMediMartEntities();
+        private UrbanMediMartEntities1 db = new UrbanMediMartEntities1();
 
         // GET: Customers
         [Authorize]
@@ -23,13 +23,13 @@ namespace UrbanMediMarts.Controllers
         }
         public ActionResult Login()
         {
-
-            return View();
+            Customer obj = new Customer();
+            return View(obj);
         }
         [HttpPost]
         public ActionResult Login(Customer cs)
         {
-            using (var Context = new UrbanMediMartEntities())
+            using (var Context = new UrbanMediMartEntities1())
             {
                 bool isValid = Context.Customers.Any(x => x.Email == cs.Email && x.Password == cs.Password);
                 if (isValid)
@@ -49,13 +49,13 @@ namespace UrbanMediMarts.Controllers
         }
         public ActionResult SignIn()
         {
-
-            return View();
+            Customer obj = new Customer();
+            return View(obj);
         }
         [HttpPost]
         public ActionResult SignIn(Customer cs)
         {
-            using (var context = new UrbanMediMartEntities())
+            using (var context = new UrbanMediMartEntities1())
             {
                 context.Customers.Add(cs);
                 context.SaveChanges();

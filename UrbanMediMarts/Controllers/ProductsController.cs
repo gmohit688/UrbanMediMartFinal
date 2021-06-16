@@ -12,7 +12,7 @@ namespace UrbanMediMarts.Controllers
 {
     public class ProductsController : Controller
     {
-        private UrbanMediMartEntities db = new UrbanMediMartEntities();
+        private UrbanMediMartEntities1 db = new UrbanMediMartEntities1();
 
         // GET: Products
         public ActionResult Index()
